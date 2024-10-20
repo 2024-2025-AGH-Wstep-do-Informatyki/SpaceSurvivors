@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dq3ig7cuv7a8q"]
+
+[ext_resource type="Texture2D" uid="uid://cncwrljgvubkb" path="res://textures/moon_rock1.png" id="1_1rwka"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_22824"]
+radius = 44.0
+
+[node name="small_rock" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0529801, 0.0529801)
+texture = ExtResource("1_1rwka")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 5)
+shape = SubResource("CircleShape2D_22824")
