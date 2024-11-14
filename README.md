@@ -69,10 +69,10 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Autorzy
 
-* **Adam Bojek** - [PurpleBooth](https://github.com/PurpleBooth)
-* **Adam Bojek** - [PurpleBooth](https://github.com/PurpleBooth)
-* **Adam Bojek** - [PurpleBooth](https://github.com/PurpleBooth)
-* **Adam Bojek** - [PurpleBooth](https://github.com/PurpleBooth)
+* **Adam Bojek** - [link](https://github.com/AdamBojek))
+* **Klaudiusz Kapala** - [link](https://github.com/klaudiusz451)
+* **Wojciech Pacholczak** - [link](https://github.com/Narsky7)
+* **Maciej Popławski** - [link](https://github.com/MTSSkibid)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
