@@ -1,6 +1,6 @@
-# Project Title
+# Space Survivors
 
-One Paragraph of project description goes here
+Nasza praca będzie polegała na próbie sklonowania gry “Vampire Survivors”, jednakże akcja będzie osadzona w kosmosie. Celem gry będzie przeżycie jak najdłużej, walcząc z potworami(domyślnie kosmitami) zbierając przy tym doświadczenie oraz nowe bronie do efektywniejszego radzenia sobie z hordami przeciwników. Stylem graficznym będzie pixel art, sama kolorystyka będzie zachowana w ciemniejszych odcieniach ze względu na miejsce akcji. Skupimy się na modularnym rozszerzaniu projektu w trakcie jego realizacji. Projekt będzie realizowany za pomocą silnika Godot v4, w specjalnym języku GDScript. “Bare minimum” ukończenia projektu z założenia będzie stworzenie postaci 2D poruszającej się w przestrzeni , używającej co najmniej 2 broni i aktywnie strzelająca w przeciwników. 
 
 ## Getting Started
 
@@ -66,19 +66,19 @@ Add additional notes about how to deploy this on a live system
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
-## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+## Autorzy
 
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Adam Bojek** - [PurpleBooth](https://github.com/PurpleBooth)
+* **Adam Bojek** - [PurpleBooth](https://github.com/PurpleBooth)
+* **Adam Bojek** - [PurpleBooth](https://github.com/PurpleBooth)
+* **Adam Bojek** - [PurpleBooth](https://github.com/PurpleBooth)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
-## License
+## Licensja
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+Ten projekt jest objęty licencją MIT – zobacz plik LICENSE.md.
 
 ## Acknowledgments
 
