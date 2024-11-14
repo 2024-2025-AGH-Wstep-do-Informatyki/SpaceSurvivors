@@ -74,11 +74,9 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 * **Wojciech Pacholczak** - [link](https://github.com/Narsky7)
 * **Maciej Popławski** - [link](https://github.com/MTSSkibid)
 
-Zobacz także listę [współtwórców](https://github.com/your/project/contributors)
-
 ## Licensja
 
-Ten projekt jest objęty licencją MIT – zobacz plik LICENSE.md.
+Ten projekt jest objęty licencją MIT – zobacz plik [LICENSE.md](LICENSE.md).
 
 ## Acknowledgments
 
