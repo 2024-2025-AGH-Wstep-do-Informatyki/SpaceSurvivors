@@ -44,11 +44,10 @@ Give an example
 
 Zmiany są potencjalnie wprowadzane po sprawdzeniu i zatwierdzeniu pull requestów
 
-## Built With
+## Użyte technologie
 
-- [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-- [Maven](https://maven.apache.org/) - Dependency Management
-- [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+- [Godot](https://godotengine.org/) - Używany framework
+- [GdScript](https://gdscript.com/) - Używany język programowania
 
 ## Space Survivors
 
