@@ -1,32 +1,89 @@
 extends Node
 
+# Główna struktura przechowująca dane gracza
+class_name PlayerData
+var name: String
+var level: int
+var score: float
 
+func _init(name: String, level: int, score: float):
+    self.name = name
+    self.level = level
+    self.score = score
+
+# Główna scena
 func _ready():
-    # Przykład obsługi błędów
-    var result = divide_numbers(10, 0)
-    if result == null:
-        print("Wystąpił błąd podczas dzielenia.")
-    else:
-        print("Wynik dzielenia to: ", result)
+    # Inicjalizacja danych gracza
+    var player_data = PlayerData.new("Gracz1", 10, 2500.5)
+
+    # Przykład obsługi zapisu i odczytu danych
+    var save_status = save_player_data("player_data.json", player_data)
+    if not save_status:
+        print("Błąd: Nie udało się zapisać danych gracza.")
     
+    var loaded_data = load_player_data("player_data.json")
+    if loaded_data == null:
+        print("Błąd: Nie udało się załadować danych gracza.")
+    else:
+        print("Dane gracza załadowane poprawnie: ", loaded_data)
+
+    # Przykład obsługi dzielenia przez zero
+    var result = safe_division(100, 0)
+    if result == null:
+        print("Błąd: Próba dzielenia przez zero.")
+
+    # Przykład zarządzania zasobami
     try:
-        read_file("nie_istnieje.txt")
+        var texture = load_texture("res://assets/nie_istnieje.png")
+        print("Tekstura załadowana poprawnie: ", texture)
     except RuntimeError as e:
-        print("Wystąpił błąd podczas czytania pliku: ", e)
+        print("Błąd podczas ładowania tekstury: ", e)
 
-# Funkcja dzielenia liczb z obsługą błędu dzielenia przez zero
-func divide_numbers(a: float, b: float) -> float:
-    if b == 0:
-        push_error("Nie można dzielić przez zero!")
-        return null
-    return a / b
+# Funkcja zapisująca dane gracza do pliku
+func save_player_data(file_path: String, data: PlayerData) -> bool:
+    var file = File.new()
+    var error = file.open(file_path, File.WRITE)
+    if error != OK:
+        push_error("Nie udało się otworzyć pliku do zapisu: " + file_path)
+        return false
 
-# Funkcja czytająca plik z obsługą błędów
-func read_file(file_path: String):
+    var json_data = {
+        "name": data.name,
+        "level": data.level,
+        "score": data.score
+    }
+    file.store_string(to_json(json_data))
+    file.close()
+    return true
+
+# Funkcja odczytująca dane gracza z pliku
+func load_player_data(file_path: String) -> Dictionary:
     var file = File.new()
     var error = file.open(file_path, File.READ)
     if error != OK:
-        raise(RuntimeError, "Nie udało się otworzyć pliku: " + file_path)
+        push_error("Nie udało się otworzyć pliku do odczytu: " + file_path)
+        return null
+
     var content = file.get_as_text()
     file.close()
-    print("Zawartość pliku: ", content)
+
+    var json_data = parse_json(content)
+    if json_data == null:
+        push_error("Błąd parsowania danych JSON.")
+        return null
+
+    return json_data
+
+# Funkcja wykonująca bezpieczne dzielenie
+func safe_division(a: float, b: float) -> float:
+    if b == 0:
+        push_error("Próba dzielenia przez zero!")
+        return null
+    return a / b
+
+# Funkcja ładująca teksturę z obsługą błędów
+func load_texture(resource_path: String) -> Texture:
+    var texture = load(resource_path)
+    if texture == null:
+        raise(RuntimeError, "Nie udało się załadować tekstury: " + resource_path)
+    return texture
