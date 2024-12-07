@@ -1,0 +1,31 @@
+extends Node
+
+func _ready():
+    # Przykład obsługi błędów
+    var result = divide_numbers(10, 0)
+    if result == null:
+        print("Wystąpił błąd podczas dzielenia.")
+    else:
+        print("Wynik dzielenia to: ", result)
+    
+    try:
+        read_file("nie_istnieje.txt")
+    except RuntimeError as e:
+        print("Wystąpił błąd podczas czytania pliku: ", e)
+
+# Funkcja dzielenia liczb z obsługą błędu dzielenia przez zero
+func divide_numbers(a: float, b: float) -> float:
+    if b == 0:
+        push_error("Nie można dzielić przez zero!")
+        return null
+    return a / b
+
+# Funkcja czytająca plik z obsługą błędów
+func read_file(file_path: String):
+    var file = File.new()
+    var error = file.open(file_path, File.READ)
+    if error != OK:
+        raise(RuntimeError, "Nie udało się otworzyć pliku: " + file_path)
+    var content = file.get_as_text()
+    file.close()
+    print("Zawartość pliku: ", content)
