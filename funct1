@@ -1,5 +1,6 @@
 extends Node
 
+
 func _ready():
     # Przykład obsługi błędów
     var result = divide_numbers(10, 0)
