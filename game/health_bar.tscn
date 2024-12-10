@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://f7k2amybpokv"]
+
+[ext_resource type="Script" path="res://progress_bar.gd" id="1_bg4hy"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_va10x"]
+
+[sub_resource type="Theme" id="Theme_rpbid"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o831n"]
+bg_color = Color(0.141176, 0.87451, 0.45098, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="ProgressBar" type="ProgressBar"]
+modulate = Color(0.215686, 0.670588, 0.0980392, 1)
+texture_filter = 2
+texture_repeat = 2
+material = SubResource("CanvasItemMaterial_va10x")
+custom_minimum_size = Vector2(100, 30)
+offset_right = 4.0
+offset_bottom = 27.0
+theme = SubResource("Theme_rpbid")
+theme_override_styles/background = SubResource("StyleBoxFlat_o831n")
+show_percentage = false
+script = ExtResource("1_bg4hy")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0.926123, 0.167334, 0.366046, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
