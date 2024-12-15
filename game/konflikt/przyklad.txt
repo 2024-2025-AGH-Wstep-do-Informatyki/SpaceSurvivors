@@ -1,0 +1,3 @@
+Linia 1: Początkowy tekst
+Linia 2: Tekst do modyfikacji
+Linia 3: Kolejny tekst
