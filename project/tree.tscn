@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc1ucjm5ajaou"]
+
+[ext_resource type="Texture2D" uid="uid://dgs1r6bs86y0y" path="res://textures/moon_rock2.png" id="1_ux34w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s5d4b"]
+radius = 18.0
+
+[node name="Tree" type="StaticBody2D"]
+
+[node name="PineTree" type="Sprite2D" parent="."]
+position = Vector2(2, -2)
+scale = Vector2(0.038051, 0.0434905)
+texture = ExtResource("1_ux34w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_s5d4b")

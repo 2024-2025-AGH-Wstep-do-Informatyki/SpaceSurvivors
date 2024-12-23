@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo6d5lv17fmlr"]
+
+[ext_resource type="Script" path="res://mob.gd" id="1_ekr4k"]
+[ext_resource type="Texture2D" uid="uid://bk7wqeinqwlq6" path="res://textures/moon_rock_enemy.png" id="3_3jlon"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6k8bm"]
+radius = 51.0392
+
+[node name="Mob" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_ekr4k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -28)
+shape = SubResource("CircleShape2D_6k8bm")
+
+[node name="MoonRockEnemy" type="Sprite2D" parent="."]
+position = Vector2(-1.5, -36.4748)
+scale = Vector2(0.0569544, 0.0569544)
+texture = ExtResource("3_3jlon")
