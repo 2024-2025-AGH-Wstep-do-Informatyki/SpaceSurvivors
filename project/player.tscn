@@ -1,0 +1,72 @@
+[gd_scene load_steps=9 format=3 uid="uid://7fisbfid0x11"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_lrfwk"]
+[ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="1_q8qgq"]
+[ext_resource type="Texture2D" uid="uid://32ufrnvqrysl" path="res://cosmonaut_sprite.png" id="2_5x6cp"]
+[ext_resource type="PackedScene" uid="uid://ckj5frrxbeerc" path="res://gun.tscn" id="3_0xu4i"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vn4a8"]
+radius = 39.0
+height = 116.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0ylpd"]
+radius = 39.0
+height = 124.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lq4bu"]
+bg_color = Color(0.0788058, 0.127934, 0.141032, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gin60"]
+bg_color = Color(0.0862745, 0.882353, 0.0470588, 1)
+border_color = Color(0, 0.382375, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(-1, 0)
+script = ExtResource("1_lrfwk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -40)
+scale = Vector2(0.227366, 0.227366)
+texture = ExtResource("2_5x6cp")
+
+[node name="HappyBoo" parent="." instance=ExtResource("1_q8qgq")]
+unique_name_in_owner = true
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -39)
+shape = SubResource("CapsuleShape2D_vn4a8")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Gun" parent="." instance=ExtResource("3_0xu4i")]
+position = Vector2(0, -61)
+
+[node name="HurtBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, -39)
+shape = SubResource("CapsuleShape2D_0ylpd")
+debug_color = Color(0.98062, 0, 0.37812, 0.42)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -899.0
+offset_top = -490.0
+offset_right = -468.0
+offset_bottom = -443.0
+theme_override_styles/background = SubResource("StyleBoxFlat_lq4bu")
+theme_override_styles/fill = SubResource("StyleBoxFlat_gin60")
+value = 100.0
+show_percentage = false
