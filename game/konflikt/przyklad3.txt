@@ -1,1 +1,1 @@
-Przykladowa inna zmiana zeby wywolac konflikt
+konflikt przyklad
